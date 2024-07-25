@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\d\Desktop\MVC\task425-7-2024\task425-7-2024\Models\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\d\Desktop\MVC\task425-7-2024\task425-7-2024\Models\DataBaseFirsModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -12,12 +12,9 @@ namespace task425_7_2024.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Table_1
+    public partial class user
     {
-        public int productID { get; set; }
-        public string productName { get; set; }
-        public string productdescription { get; set; }
-        public string productQuantity { get; set; }
-        public Nullable<int> productPrice { get; set; }
+        public int userID { get; set; }
+        public string userName { get; set; }
     }
 }

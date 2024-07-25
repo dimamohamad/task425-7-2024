@@ -13,10 +13,10 @@ namespace task425_7_2024.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProductsEntities : DbContext
+    public partial class ProductsEntities1 : DbContext
     {
-        public ProductsEntities()
-            : base("name=ProductsEntities")
+        public ProductsEntities1()
+            : base("name=ProductsEntities1")
         {
         }
     
@@ -25,6 +25,7 @@ namespace task425_7_2024.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Table_1> Table_1 { get; set; }
+        public virtual DbSet<product> products { get; set; }
+        public virtual DbSet<user> users { get; set; }
     }
 }

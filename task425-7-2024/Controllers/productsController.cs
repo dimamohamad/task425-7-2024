@@ -10,107 +10,107 @@ using task425_7_2024.Models;
 
 namespace task425_7_2024.Controllers
 {
-    public class Table_1Controller : Controller
+    public class productsController : Controller
     {
-        private ProductsEntities db = new ProductsEntities();
+        private ProductsEntities1 db = new ProductsEntities1();
 
-        // GET: Table_1
+        // GET: products
         public ActionResult Index()
         {
-            return View(db.Table_1.ToList());
+            return View(db.products.ToList());
         }
 
-        // GET: Table_1/Details/5
+        // GET: products/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = db.Table_1.Find(id);
-            if (table_1 == null)
+            product product = db.products.Find(id);
+            if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(table_1);
+            return View(product);
         }
 
-        // GET: Table_1/Create
+        // GET: products/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Table_1/Create
+        // POST: products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "productID,productName,productdescription,productQuantity,productPrice")] Table_1 table_1)
+        public ActionResult Create([Bind(Include = "productID,productName,productdescription,productQuantity,productPrice")] product product)
         {
             if (ModelState.IsValid)
             {
-                db.Table_1.Add(table_1);
+                db.products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(table_1);
+            return View(product);
         }
 
-        // GET: Table_1/Edit/5
+        // GET: products/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = db.Table_1.Find(id);
-            if (table_1 == null)
+            product product = db.products.Find(id);
+            if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(table_1);
+            return View(product);
         }
 
-        // POST: Table_1/Edit/5
+        // POST: products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "productID,productName,productdescription,productQuantity,productPrice")] Table_1 table_1)
+        public ActionResult Edit([Bind(Include = "productID,productName,productdescription,productQuantity,productPrice")] product product)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(table_1).State = EntityState.Modified;
+                db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(table_1);
+            return View(product);
         }
 
-        // GET: Table_1/Delete/5
+        // GET: products/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table_1 table_1 = db.Table_1.Find(id);
-            if (table_1 == null)
+            product product = db.products.Find(id);
+            if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(table_1);
+            return View(product);
         }
 
-        // POST: Table_1/Delete/5
+        // POST: products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Table_1 table_1 = db.Table_1.Find(id);
-            db.Table_1.Remove(table_1);
+            product product = db.products.Find(id);
+            db.products.Remove(product);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
